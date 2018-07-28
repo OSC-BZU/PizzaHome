@@ -1,15 +1,17 @@
-import Services.DataDB;
-import Services.DataFile;
-import Services.DataImporter;
+import Services.BaseViewInterface;
+import javafx.application.Application;
+import javafx.stage.Stage;
 
-public class Main {
+public class Main extends Application implements BaseViewInterface{
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        loadFXMLLocal("Views/MainWindowComponent/MainWindow.fxml", primaryStage);
+        primaryStage.show();
+    }
 
     public static void main(String[] args) {
-
-        DataImporter dataSource = new DataFile();
-        dataSource.importPizza().forEach(System.out::println);
-
-        dataSource = new DataDB();
-        dataSource.importPizza().forEach(System.out::println);
+        launch(args);
     }
+
 }

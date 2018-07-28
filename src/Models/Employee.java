@@ -1,6 +1,8 @@
 package Models;
 
 /**
+ *
+ *
  * Created by jihadbadran on 7/21/18.
  */
 public class Employee {
@@ -10,6 +12,15 @@ public class Employee {
     private int position;
 
 
+    /**
+     *
+     * this is the main constructor of the Employee Class
+     * @see Services.DataDB
+     * @param firstName String
+     * @param lastName String
+     * @param id Integer
+     * @param position Integer
+     */
     public Employee(String firstName, String lastName, int id, int position) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -18,6 +29,10 @@ public class Employee {
     }
 
 
+    /**
+     *
+     * @return String the first name of the selected Employee
+     */
     public String getFirstName() {
         return firstName;
     }
